@@ -1,0 +1,148 @@
+<% layout = ('layouts/main') %>
+
+<!-- Converted from start-workout.html -->
+
+<!-- Main visible part of the webpage -->
+
+  <div class="container">
+    <!-- Wrapper to center and organize page content -->
+
+    <div class="page-header">
+      <!-- Top section containing title and navigation -->
+      <div>
+        <div class="breadcrumb">
+          <!-- Breadcrumb navigation (shows user where they are) -->
+          <a href="dashboard">Dashboard</a> / Start Workout
+        </div>
+
+        <h1 class="title">Start Workout</h1>
+        <!-- Main title of the page -->
+      </div>
+
+      <div class="btn-bar">
+        <!-- Button section for navigation -->
+        <a href="dashboard" class="btn secondary">← Back to Dashboard</a>
+      </div>
+    </div>
+
+    <!-- Workout recommendation card (hidden by default) -->
+    <div class="card" id="recBanner" style="display:none;">
+      <div class="section-title">
+        <div>
+          <div class="h6">TODAY'S WORKOUT RECOMMENDATION</div>
+          <!-- Section heading -->
+
+          <div style="font-weight:700; display:flex; align-items:center; gap:8px;">
+            <!-- Displays recommended workout name and its intensity -->
+            <span id="recTitle">Moderate Activity</span>
+            <span class="chip" id="recIntensity">Ready</span>
+          </div>
+
+          <div class="muted" id="recDesc">
+            <!-- Description of the recommendation -->
+            Good recovery with some fatigue – perfect for steady-state training.
+          </div>
+        </div>
+        <span class="pill">Ready</span>
+        <!-- Status shown as a pill-shaped label -->
+      </div>
+    </div>
+
+    <div class="row">
+      <!-- Two-column layout starts here -->
+
+      <div>
+        <!-- Left Column: Workout and Timer sections -->
+
+        <div class="card">
+          <!-- Workout details card -->
+          <div class="section-title" style="margin-bottom:6px;">
+            <div>
+              <div class="h6">WORKOUT</div>
+              <!-- Subheading for workout section -->
+
+              <div style="font-size:20px; font-weight:700;">
+                <!-- Workout name and difficulty level -->
+                <span id="workoutName">Running</span>
+                <span class="badge" id="workoutLevel" style="margin-left:8px;">Medium</span>
+              </div>
+
+              <div class="muted" id="workoutSubtitle">
+                Structured plan for today
+              </div>
+            </div>
+
+            <!-- Estimated time and calories shown on top-right -->
+            <div class="muted">
+              <span id="estTime">—</span> • 
+              <span id="estCalories">—</span> kcal
+            </div>
+          </div>
+
+          <ul class="list" id="stepsList"></ul>
+          <!-- List where steps of workout (like warm-up, jog, rest, etc.) will be shown -->
+        </div>
+
+        <div class="card">
+          <!-- Timer Card -->
+          <div class="section-title">
+            <div class="h6">TIMER</div>
+            <!-- Heading for timer section -->
+
+            <div class="muted">
+              <!-- Shows which step is currently active -->
+              <span id="currentStepName">—</span>
+            </div>
+          </div>
+
+          <!-- Timer Display -->
+          <div class="timer" id="timer">00:00</div>
+
+          <div class="btn-bar" style="margin-top:12px;">
+            <!-- Control buttons for the timer -->
+            <button class="btn" id="btnStart">Start</button>
+            <button class="btn secondary" id="btnPause" disabled>Pause</button>
+            <button class="btn secondary" id="btnSkip" disabled>Skip Step</button>
+            <button class="btn secondary" id="btnReset">Reset</button>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <!-- Right Column: Quick Start and Notes -->
+
+        <div class="card">
+          <!-- Quick Start Options -->
+          <div class="h6">QUICK START</div>
+          <div class="btn-bar" style="margin-top:8px;">
+            <!-- Shortcut buttons for different workouts -->
+            <a class="btn secondary" href="/workouts/new?w=Running">Running</a>
+            <a class="btn secondary" href="/workouts/new?w=Cycling">Cycling</a>
+            <a class="btn secondary" href="/workouts/new?w=Swimming">Swimming</a>
+            <a class="btn secondary" href="/workouts/new?w=Yoga">Yoga</a>
+
+          </div>
+        </div>
+
+        <div class="card">
+          <!-- Notes Section -->
+          <div class="h6">NOTES</div>
+          <textarea id="notes" rows="8" placeholder="How are you feeling today? Any constraints?"></textarea>
+          <!-- Text area where user can write personal notes -->
+
+          <div class="btn-bar" style="margin-top:10px;">
+            <button class="btn secondary" id="saveNotes">Save Note</button>
+          </div>
+
+          <div class="muted" id="notesSaved" style="display:none; margin-top:6px;">
+            Saved ✓
+            <!-- Confirmation message shown after saving notes -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Link to JavaScript file controlling timer, steps, and data -->
+  <script src="/js/start_workout.js" defer></script>
+  <!-- "defer" ensures script runs after the HTML page loads -->

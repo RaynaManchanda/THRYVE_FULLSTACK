@@ -1,0 +1,371 @@
+<% layout = ('layouts/main') %>
+
+<!-- Converted from login.html -->
+
+<header class="top">
+    <div class="brand">THRYVE</div>
+    <div class="links">
+      <a class="chip" href="index">Home</a>
+      <a class="chip" href="dashboard">Dashboard</a>
+      <a class="chip" href="recovery">Recovery</a>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <div class="shell">
+      
+      <aside class="left">
+        <h1>Welcome back 👋</h1>
+        <p>Sign in to access your fitness dashboard, recovery insights, and personalized goals.</p>
+        <div class="badges">
+          <span class="pill">Heart Rate</span>
+          <span class="pill">Activity</span>
+          <span class="pill">Goals</span>
+          <span class="pill">Achievements</span>
+        </div>
+      </aside>
+
+      
+      <section class="card" aria-labelledby="t" aria-describedby="s">
+        <h2 id="t" class="title">Sign In to THRYVE</h2>
+        <p id="s" class="sub">Enter your credentials to continue.</p>
+
+        <form id="form" novalidate>
+          <p id="ok" class="ok">Signed in successfully. Redirecting…</p>
+          <p id="err" class="error">Please enter a valid email and a password of at least 6 characters.</p>
+
+          <div class="field">
+            <label for="email">Email Address</label>
+            <div class="control">
+              <svg class="icon" viewBox="0 0 24 24" fill="none"><path d="M4 6h16a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1zm0 2l8 5 8-5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <input id="email" name="email" type="email" placeholder="you@example.com" autocomplete="email" required/>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="password">Password</label>
+            <div class="control">
+              <svg class="icon" viewBox="0 0 24 24" fill="none"><path d="M6 10V8a6 6 0 1 1 12 0v2M6 10h12v8a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2v-8z" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <input id="password" name="password" type="password" placeholder="••••••••" autocomplete="current-password" minlength="6" required/>
+              <button class="toggle" type="button" id="toggle" aria-label="Show password">👁️</button>
+            </div>
+            <div class="hint">Use at least 6 characters.</div>
+          </div>
+
+          <div class="row">
+            <label><input id="remember" type="checkbox" style="accent-color:#6ea0ff"> Remember me</label>
+            <a href="#">Forgot Password?</a>
+          </div>
+
+          <button class="btn" type="submit">Log In →</button>
+          <div class="alt">Don’t have an account? <a href="#" aria-label="Create account">Create Account</a></div>
+        </form>
+      </section>
+    </div>
+  </main>
+
+  <script>
+    // Show/hide password
+    // const pwd = document.getElementById('password');
+    // const tog = document.getElementById('toggle');
+    // tog.addEventListener('click', () => {
+    //   const show = pwd.type === 'password';
+    //   pwd.type = show ? 'text' : 'password';
+    //   tog.textContent = show ? '🙈' : '👁️';
+    //   tog.setAttribute('aria-label', show ? 'Hide password' : 'Show password');
+    // });
+
+    // Simple validation + feedback
+    // const form = document.getElementById('form');
+    // const ok   = document.getElementById('ok');
+    // const err  = document.getElementById('err');
+
+    // form.addEventListener('submit', (e) => {
+    //   e.preventDefault();
+    //   const email = document.getElementById('email').value.trim();
+    //   const pass  = pwd.value;
+
+    //   const valid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) && pass.length >= 6;
+    //   if(!valid){
+    //     ok.style.display = 'none';
+    //     err.style.display = 'block';
+    //     return;
+    //   }
+    //   err.style.display = 'none';
+    //   ok.style.display = 'block';
+    //   setTimeout(()=>location.href='dashboard.html', 700);
+    // });
+  </script>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<!-- Defines this as an HTML5 document and the language as English -->
+<head>
+  <meta charset="utf-8"/>
+  <!-- Sets character encoding to UTF-8 (supports all symbols and emojis) -->
+
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <!-- Makes the page fit and look good on all screen sizes -->
+
+  <title>THRYVE — Sign In</title>
+  <!-- Page title shown in browser tab -->
+
+  <!-- Load Inter font from Google Fonts for clean typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- 💅 Internal CSS styling -->
+  <style>
+    /* ==========================
+       🎨 COLOR VARIABLES
+       ========================== */
+    :root{
+      --bg:#ffffff;              /* Background color */
+      --text:#0f172a;            /* Main text color */
+      --sub:#5b6476;             /* Subtext color */
+      --primary:#2563eb;         /* Main blue color */
+      --primary-2:#1e40af;       /* Darker blue for gradient */
+      --surface:#f7f9fc;         /* Light surface background */
+      --ring:#e8edf5;            /* Border light color */
+      --field:#ffffff;           /* Input field background */
+      --field-border:#d7deea;    /* Input field border color */
+      --muted:#7b869e;           /* Faded text color */
+      --ok:#16a34a;              /* Success message color (green) */
+      --err:#ef4444;             /* Error message color (red) */
+    }
+
+    /* ========== GLOBAL STYLES ========== */
+    *{box-sizing:border-box} /* Makes padding/margins behave consistently */
+    html,body{
+      margin:0;
+      padding:0;
+      background:var(--bg);
+      color:var(--text);
+      font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+    }
+
+    /* Links (blue text) */
+    a{color:var(--primary);text-decoration:none}
+    a:hover{color:#1b4ae0}
+
+    /* ========== TOP NAVBAR (currently unused) ========== */
+    .top{
+      height:64px; display:flex; align-items:center; gap:18px;
+      border-bottom:1px solid var(--ring); padding:0 24px; position:sticky; top:0; background:#fff; z-index:5;
+    }
+    .brand{font-weight:900; letter-spacing:.18em; font-size:14px}
+    .top .links{margin-left:auto; display:flex; gap:14px}
+    .chip{
+      background:#eef2ff; color:#223057; font-weight:700; padding:8px 12px;
+      border-radius:999px; border:1px solid #dfe6ff; font-size:12px;
+    }
+
+    /* ========== MAIN PAGE LAYOUT ========== */
+    .wrap{
+      min-height:calc(100vh - 64px); /* Full height minus top bar */
+      display:grid; place-items:center; /* Centers the form vertically */
+      padding:36px 16px;
+    }
+
+    /* 2-column layout: left = text, right = form card */
+    .shell{
+      width:100%; max-width:960px;
+      display:grid;
+      grid-template-columns:1.05fr .95fr; /* 2 columns: slightly bigger left side */
+      gap:40px; align-items:center;
+    }
+
+    /* ========== LEFT SIDE (text info) ========== */
+    .left h1{font-size:48px; margin:0 0 8px; font-weight:900; letter-spacing:.01em}
+    .left p{color:var(--sub); margin:0; line-height:1.7}
+    .badges{display:flex; gap:10px; flex-wrap:wrap; margin-top:16px}
+    .pill{
+      background:#eaf2ff; color:#1e3a8a; border:1px solid #dfe6ff;
+      padding:8px 12px; border-radius:999px; font-weight:700; font-size:12px;
+    }
+
+    /* ========== RIGHT SIDE (login card) ========== */
+    .card{
+      background:#fff; border:1px solid var(--ring); border-radius:20px; padding:28px;
+      box-shadow:0 12px 40px rgba(16,24,40,.06), inset 0 1px 0 rgba(255,255,255,.55);
+    }
+    .title{margin:0 0 6px; text-align:center; font-size:26px; font-weight:800}
+    .sub{color:var(--muted); text-align:center; margin:0 0 18px; font-size:14px}
+
+    /* ========== FORM STYLES ========== */
+    form{display:grid; gap:14px}
+    .field{display:grid; gap:8px}
+    label{font-size:13px; font-weight:700; color:#273449}
+    .control{position:relative} /* Needed for icons inside input fields */
+
+    /* Input box design */
+    input[type="email"], input[type="password"]{
+      width:100%; background:var(--field); color:#0f172a;
+      border:1px solid var(--field-border); border-radius:14px;
+      padding:14px 44px 14px 44px; /* Space for icons */
+      font-size:14px; outline:none;
+      transition:border-color .15s, box-shadow .15s, background .15s;
+    }
+
+    input::placeholder{color:#94a3b8}
+    input:focus{border-color:#9ab0ff; box-shadow:0 0 0 4px #eaefff}
+
+    /* Input icons and toggle button */
+    .icon{
+      position:absolute; left:12px; top:50%; transform:translateY(-50%);
+      width:20px; height:20px; color:#90a0bf;
+    }
+
+    .toggle{
+      position:absolute; right:10px; top:50%; transform:translateY(-50%);
+      border:0; background:transparent; color:#6e7fa3;
+      padding:6px 8px; border-radius:10px; cursor:pointer;
+    }
+    .toggle:hover{background:#eef2ff}
+
+    /* Checkbox and forgot password row */
+    .row{display:flex; align-items:center; justify-content:space-between; margin-top:4px}
+    .row label{display:flex; gap:8px; align-items:center; color:#334155; font-weight:600; font-size:13px}
+    .hint{font-size:12px; color:var(--muted); margin-top:-6px}
+
+    /* Login button */
+    .btn{
+      border:0; cursor:pointer; width:100%;
+      background:linear-gradient(180deg,var(--primary) 0%, var(--primary-2) 100%);
+      color:#fff; font-weight:900; letter-spacing:.02em;
+      border-radius:14px; padding:14px 18px; font-size:15px;
+      box-shadow:0 14px 36px rgba(37,99,235,.25);
+      transition:transform .08s, box-shadow .2s, filter .2s;
+    }
+    .btn:hover{transform:translateY(-1px); filter:saturate(112%)}
+    .btn:active{transform:translateY(0)}
+
+    /* Sign up text and status messages */
+    .alt{display:flex; justify-content:center; gap:6px; font-size:13px; margin-top:10px}
+    .error,.ok{display:none; font-size:13px; text-align:center}
+    .error{color:var(--err)}
+    .ok{color:var(--ok)}
+
+    /* ========== RESPONSIVE DESIGN ========== */
+    @media (max-width:980px){
+      .shell{grid-template-columns:1fr} /* Stack columns */
+      .left{order:2; text-align:center}
+      .card{order:1}
+    }
+  </style>
+</head>
+
+<body>
+  <!-- 🧍‍♀️ MAIN SECTION -->
+  <main class="wrap">
+    <div class="shell">
+
+      <!-- LEFT SIDE INFO -->
+      <aside class="left">
+        <h1>Welcome back 👋</h1>
+        <p>Sign in to access your fitness dashboard, recovery insights, and personalized goals.</p>
+        <div class="badges">
+          <span class="pill">Heart Rate</span>
+          <span class="pill">Activity</span>
+          <span class="pill">Goals</span>
+          <span class="pill">Achievements</span>
+        </div>
+      </aside>
+
+      <!-- RIGHT SIDE LOGIN CARD -->
+      <section class="card" aria-labelledby="t" aria-describedby="s">
+        <h2 id="t" class="title">Sign In to THRYVE</h2>
+        <p id="s" class="sub">Enter your credentials to continue.</p>
+
+        <!-- ✅ LOGIN FORM -->
+        <form id="form" novalidate>
+          <!-- Success and error messages -->
+          <p id="ok" class="ok">Signed in successfully. Redirecting…</p>
+          <p id="err" class="error">Please enter a valid email and a password of at least 6 characters.</p>
+
+          <!-- EMAIL INPUT FIELD -->
+          <div class="field">
+            <label for="email">Email Address</label>
+            <div class="control">
+              <!-- Email icon -->
+              <svg class="icon" viewBox="0 0 24 24" fill="none">
+                <path d="M4 6h16a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1zm0 2l8 5 8-5"
+                 stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              <!-- Input box -->
+              <input id="email" name="email" type="email" placeholder="you@example.com"
+                autocomplete="email" required/>
+            </div>
+          </div>
+
+          <!-- PASSWORD INPUT FIELD -->
+          <div class="field">
+            <label for="password">Password</label>
+            <div class="control">
+              <!-- Lock icon -->
+              <svg class="icon" viewBox="0 0 24 24" fill="none">
+                <path d="M6 10V8a6 6 0 1 1 12 0v2M6 10h12v8a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2v-8z"
+                 stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              <!-- Password input -->
+              <input id="password" name="password" type="password" placeholder="••••••••"
+                autocomplete="current-password" minlength="6" required/>
+              <!-- 👁️ Show/Hide password button -->
+              <button class="toggle" type="button" id="toggle" aria-label="Show password">👁️</button>
+            </div>
+            <div class="hint">Use at least 6 characters.</div>
+          </div>
+
+          <!-- REMEMBER + FORGOT -->
+          <div class="row">
+            <label><input id="remember" type="checkbox" style="accent-color:#6ea0ff"> Remember me</label>
+            <a href="#">Forgot Password?</a>
+          </div>
+
+          <!-- LOGIN BUTTON -->
+          <button class="btn" type="submit">Log In →</button>
+
+          <!-- SIGN UP LINK -->
+          <div class="alt">Don’t have an account? <a href="#" aria-label="Create account">Create Account</a></div>
+        </form>
+      </section>
+    </div>
+  </main>
+
+  <!-- 🧠 JAVASCRIPT for form behavior -->
+  <script>
+    // Get elements by ID for later use
+    const form = document.getElementById("form");
+    const email = document.getElementById("email");
+    const password = document.getElementById("password");
+    const okMsg = document.getElementById("ok");
+    const errMsg = document.getElementById("err");
+
+    // 👁️ Toggle password visibility when eye button is clicked
+    document.getElementById("toggle").addEventListener("click", () => {
+      password.type = password.type === "password" ? "text" : "password";
+      // If input type is password → change to text, else back to password
+    });
+
+    // 🧾 Handle form submission
+    form.addEventListener("submit", function (e) {
+      e.preventDefault(); // Stops the form from reloading the page
+
+      // Check if email is not empty and password has 6+ characters
+      if (email.value.trim() !== "" && password.value.length >= 6) {
+        errMsg.style.display = "none";  // Hide error
+        okMsg.style.display = "block";  // Show success message
+
+        // After 1 second, go to the homepage
+        setTimeout(() => {
+          window.location.href = "index.html"; // redirect to home page
+        }, 1000);
+      } else {
+        okMsg.style.display = "none";  // Hide success message
+        errMsg.style.display = "block"; // Show error message
+      }
+    });
+  </script>

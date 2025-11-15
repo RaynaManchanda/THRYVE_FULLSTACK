@@ -1,0 +1,194 @@
+<% layout = ('layouts/main') %>
+
+<!-- Converted from profile-setting.html -->
+
+<header>
+    <h2>Profile Settings</h2>
+    <a href="index" class="btn">← Back to Home</a>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <h3>Personal Information</h3>
+      <label>Full Name:</label>
+      <input type="text" id="name" placeholder="Enter name">
+
+      <label>Email:</label>
+      <input type="email" id="email" placeholder="Enter email">
+
+      <label>Age:</label>
+      <input type="number" id="age" placeholder="Enter age">
+
+      <button id="saveProfile">Update Profile</button>
+    </section>
+
+    <section class="card">
+      <h3>Progress</h3>
+      <p id="progressText">Progress: 0%</p>
+      <button id="increaseProgress">Increase Progress</button>
+    </section>
+  </main>
+
+  <script src="/js/profile.js"></script>
+</body>
+</html> -->
+<!DOCTYPE html>
+<!-- Declares this file as an HTML5 document -->
+
+<html lang="en">
+<!-- The page language is English -->
+
+<head>
+  <meta charset="UTF-8" />
+  <!-- Sets character encoding (so all symbols and letters display correctly) -->
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Makes the website responsive (fits on phone, tablet, laptop) -->
+
+  <title>Profile Settings | THRYVE</title>
+  <!-- The title shown on browser tab -->
+
+  <link rel="stylesheet" href="/css/styles.css" />
+  <!-- Connects your external CSS file (for overall theme) -->
+
+  <style>
+    /* Inline CSS styles for this specific page */
+
+    /* --- Navbar --- */
+    .navbar {
+      display: flex; /* Places logo and links in a row */
+      justify-content: space-between; /* Keeps logo left, links right */
+      align-items: center; /* Centers items vertically */
+      padding: 15px 40px; /* Space inside navbar */
+      background-color: #fff; /* White background */
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05); /* Soft shadow below */
+    }
+
+    .logo {
+      font-size: 18px;
+      font-weight: 700; /* Bold text */
+      color: #1a4dff; /* Blue text */
+      letter-spacing: 1px; /* Space between letters */
+    }
+
+    .nav-links a {
+      margin-left: 25px; /* Space between each link */
+      text-decoration: none; /* Removes underline */
+      color: #2a2a2a; /* Dark grey text */
+      font-weight: 500; /* Slightly bold */
+      transition: color 0.2s ease; /* Smooth hover effect */
+      background: none;
+      padding: 5px 0;
+      border-radius: 0;
+    }
+
+    .nav-links a:hover {
+      color: #1a4dff; /* Turns blue when hovered */
+    }
+
+    .profile-icon {
+      font-size: 20px; /* Makes profile emoji a bit larger */
+    }
+
+    /* --- Page Layout --- */
+    body {
+      font-family: 'Poppins', sans-serif; /* Clean font */
+      background-color: #f8faff; /* Light background */
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 700px; /* Centers the form and sets width */
+      margin: 60px auto; /* Centers it horizontally + top space */
+      background: #fff; /* White card background */
+      border-radius: 15px; /* Rounded edges */
+      padding: 30px 40px; /* Inside spacing */
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05); /* Light outer shadow */
+    }
+
+    h3 {
+      text-align: center; /* Centers the heading text */
+      color: #2a2a2a; /* Dark grey text */
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block; /* Each label on new line */
+      margin-top: 15px;
+      color: #444;
+      font-weight: 500;
+    }
+
+    input {
+      width: 100%; /* Makes text boxes full width */
+      padding: 10px; /* Space inside box */
+      margin-top: 6px; /* Gap between label and input */
+      border: 1px solid #ddd; /* Light border */
+      border-radius: 8px; /* Slightly rounded */
+      outline: none; /* Removes blue highlight */
+      transition: 0.2s ease; /* Smooth focus animation */
+      font-family: inherit; /* Same font as page */
+    }
+
+    input:focus {
+      border-color: #1a4dff; /* Blue border when selected */
+      box-shadow: 0 0 4px rgba(26, 77, 255, 0.3); /* Glow effect */
+    }
+
+    button {
+      width: 100%; /* Full width button */
+      background: linear-gradient(90deg, #1a4dff, #0044cc); /* Blue gradient */
+      color: white; /* White text */
+      border: none;
+      border-radius: 10px;
+      padding: 12px;
+      margin-top: 25px;
+      cursor: pointer; /* Hand icon on hover */
+      font-size: 15px;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: linear-gradient(90deg, #0044cc, #0033aa); /* Darker on hover */
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- 🌐 Navbar at the top -->
+  <header class="navbar">
+    <h2 class="logo">THRYVE</h2> <!-- Website name/logo -->
+
+    <nav class="nav-links">
+      <!-- Navigation links -->
+      <a href="index">Home</a>
+      <a href="dashboard">Dashboard</a>
+      <a href="recovery">Recovery</a>
+      <a href="profilesettings" class="profile-icon">👤</a> <!-- Profile icon -->
+    </nav>
+  </header>
+
+  <!-- 🧍 Profile Settings Form Section -->
+  <main class="container">
+    <h3>Personal Information</h3>
+
+    <!-- Input for Name -->
+    <label>Full Name:</label>
+    <input type="text" id="name" placeholder="Enter name">
+
+    <!-- Input for Email -->
+    <label>Email:</label>
+    <input type="email" id="email" placeholder="Enter email">
+
+    <!-- Input for Age -->
+    <label>Age:</label>
+    <input type="number" id="age" placeholder="Enter age">
+
+    <!-- Button to save profile -->
+    <button id="saveProfile">Update Profile</button>
+  </main>
+
+  <!-- Links the JS file to handle form actions (like saving profile) -->
+  <script src="/js/profile.js"></script>
