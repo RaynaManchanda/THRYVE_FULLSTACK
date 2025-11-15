@@ -85,5 +85,7 @@ http://localhost:3000
 - Analytics dashboard  
 - Notifications / reminders  
 
-## Author
+## Contributors
 Rayna Manchanda
+Saarthak Malik
+Purvi Aneja
