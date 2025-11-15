@@ -86,6 +86,6 @@ http://localhost:3000
 - Notifications / reminders  
 
 ## Contributors
-Rayna Manchanda
-Saarthak Malik
-Purvi Aneja
+-Rayna Manchanda
+-Saarthak Malik
+-Purvi Aneja
