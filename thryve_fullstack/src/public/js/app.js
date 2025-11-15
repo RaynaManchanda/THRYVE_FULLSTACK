@@ -1,4 +1,4 @@
-// 👉 Function to create (mount) a chart inside a given HTML element
+//  Function to create (mount) a chart inside a given HTML element
 function mount(id, chartConfig) {
   // Find the HTML element by its ID (for example, <canvas id="goalRing">)
   const el = document.getElementById(id);
@@ -14,11 +14,11 @@ function mount(id, chartConfig) {
   new Chart(ctx, chartConfig);
 }
 
-// =======================
-// 📊 DASHBOARD CHARTS
-// =======================
 
-// 🟦 1. Goal Progress Ring (shows completed vs remaining steps)
+//  DASHBOARD CHARTS
+
+
+//  1. Goal Progress Ring (shows completed vs remaining steps)
 mount('goalRing', {
   type: 'doughnut', // Type of chart: circular donut chart
   data: {
@@ -37,7 +37,7 @@ mount('goalRing', {
   }
 });
 
-// 🟨 2. Weekly Steps Bar Chart (shows steps from Sep 21–27)
+//  2. Weekly Steps Bar Chart (shows steps from Sep 21–27)
 mount('weeklySteps', {
   type: 'bar', // Bar chart
   data: {
@@ -58,7 +58,7 @@ mount('weeklySteps', {
   }
 });
 
-// ❤️ 3. Heart Rate Today (line chart showing BPM throughout the day)
+//  3. Heart Rate Today (line chart showing BPM throughout the day)
 mount('hrToday', {
   type: 'line', // Line chart
   data: {
@@ -81,7 +81,7 @@ mount('hrToday', {
   }
 });
 
-// 🔄 4. Combined Chart (Steps + Heart Rate + Stress %)
+//  4. Combined Chart (Steps + Heart Rate + Stress %)
 mount('stressCombo', {
   data: {
     labels: ['Mon','Tue','Wed','Thu','Fri','Sat','Sun'], // Days of week
@@ -128,11 +128,9 @@ mount('stressCombo', {
   }
 });
 
-// =======================
-// 💤 RECOVERY CHARTS
-// =======================
+//  RECOVERY CHARTS
 
-// 🟣 5. Sleep Donut Chart (Deep, REM, Light, Awake)
+//  5. Sleep Donut Chart (Deep, REM, Light, Awake)
 mount('sleepDonut', {
   type: 'doughnut',
   data: {
@@ -148,7 +146,7 @@ mount('sleepDonut', {
   }
 });
 
-// 🧡 6. Strain vs Recovery Chart
+//  6. Strain vs Recovery Chart
 mount('strainVsRecovery', {
   data: {
     labels: ['Mon','Tue','Wed','Thu','Fri','Sat','Sun'],
@@ -181,7 +179,7 @@ mount('strainVsRecovery', {
   }
 });
 
-// 💚 7. Recovery Timeline (line chart for % recovery through the day)
+//  7. Recovery Timeline (line chart for % recovery through the day)
 mount('recoveryTimeline', {
   type: 'line',
   data: {
@@ -202,7 +200,7 @@ mount('recoveryTimeline', {
   }
 });
 
-// 💙 8. HRV Trend (Heart Rate Variability trend over the week)
+//  8. HRV Trend (Heart Rate Variability trend over the week)
 mount('hrvTrend', {
   type: 'line',
   data: {

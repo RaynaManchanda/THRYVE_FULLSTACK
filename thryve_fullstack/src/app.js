@@ -29,8 +29,11 @@ app.set('layout', 'layouts/main');
 app.use('/', indexRoutes);
 app.use('/workouts', workoutRoutes);
 app.use('/recovery', recoveryRoutes);
+const loginRoutes = require('./routes/login');
+app.use('/login', loginRoutes);
 
 app.use((req,res)=> res.status(404).send('Not Found'));
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, ()=> console.log('Server running on', PORT));
+

@@ -1,6 +1,4 @@
-// ===============================
 // USER PROFILE + PROGRESS SYSTEM
-// ===============================
 
 // Class to represent a user's basic details
 class UserProfile {
@@ -42,7 +40,7 @@ class ProgressTracker extends UserProfile {
 // Create a default user object
 const user = new ProgressTracker("Guest", "guest@example.com", 0);
 
-// ========== SAVE PROFILE BUTTON ==========
+//  SAVE PROFILE BUTTON 
 const saveBtn = document.getElementById("saveProfile");
 if (saveBtn) {
   saveBtn.addEventListener("click", () => {
@@ -54,7 +52,7 @@ if (saveBtn) {
   });
 }
 
-// ========== INCREASE PROGRESS BUTTON ==========
+//  INCREASE PROGRESS BUTTON 
 const progressBtn = document.getElementById("increaseProgress");
 if (progressBtn) {
   progressBtn.addEventListener("click", () => {

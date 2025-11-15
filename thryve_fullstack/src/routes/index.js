@@ -2,9 +2,9 @@ const express = require('express');
 const router = express.Router();
 
 // Home Page
-router.get('/', (req, res) => {
+router.get('/index', (req, res) => {
     res.render('index', { 
-        active: 'home', 
+        active: 'index', 
         title: 'Home' 
     });
 });
@@ -18,3 +18,12 @@ router.get('/dashboard', (req, res) => {
 });
 
 module.exports = router;
+
+// Logout Page
+router.get('/login', (req, res) => {
+    res.render('login', { 
+        active: 'login', 
+        title: 'Login' 
+    });
+});
+

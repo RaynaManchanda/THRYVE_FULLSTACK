@@ -1,6 +1,4 @@
-// ===============================
 // FETCH WORKOUT LIST FROM JSON
-// ===============================
 
 // Load workouts.json from the "public/data" folder
 fetch("/data/workouts.json")

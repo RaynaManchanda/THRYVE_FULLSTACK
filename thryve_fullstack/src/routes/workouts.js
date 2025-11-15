@@ -16,7 +16,7 @@ router.post('/update/:id', workoutController.update);
 router.get('/delete/:id', workoutController.remove);
 
 // Start workout page
-router.get('/new', (req, res) => {
+router.get('/start-workout', (req, res) => {
     res.render('start-workout', { 
         active: 'start', 
         title: 'Start Workout' 
