@@ -1,0 +1,56 @@
+{
+  "Running": {
+    "level": "Medium",                         
+    "subtitle": "Endurance-focused steady run",
+    "steps": [
+      { "name": "Warm-up Walk", "seconds": 300 },
+      { "name": "Easy Jog", "seconds": 600 },
+      { "name": "Steady Run", "seconds": 900 },
+      { "name": "Cool-down Walk", "seconds": 300 }
+    ],
+    "kcalPerMin": 10
+  },
+  "Cycling": {
+    "level": "Medium",
+    "subtitle": "Cadence + steady aerobic ride",
+    "steps": [
+      { "name": "Warm-up Spin", "seconds": 300 },
+      { "name": "Steady Ride", "seconds": 1200 },
+      { "name": "Cool-down Spin", "seconds": 300 }
+    ],
+    "kcalPerMin": 9
+  },
+  "Swimming": {
+    "level": "Medium",
+    "subtitle": "Technique + easy laps",
+    "steps": [
+      { "name": "Warm-up Drills", "seconds": 300 },
+      { "name": "Easy Laps", "seconds": 900 },
+      { "name": "Cool-down", "seconds": 240 }
+    ],
+    "kcalPerMin": 8
+  },
+  "Yoga": {
+    "level": "Easy",
+    "subtitle": "Breath-led mobility session",
+    "steps": [
+      { "name": "Breath + Centering", "seconds": 180 },
+      { "name": "Flow Sequence", "seconds": 900 },
+      { "name": "Cool-down / Savasana", "seconds": 300 }
+    ],
+    "kcalPerMin": 4
+  },
+  "Moderate Cardio": {
+    "level": "Medium",
+    "subtitle": "Steady-state cardio block",
+    "steps": [
+      { "name": "Warm-up", "seconds": 240 },
+      { "name": "Cardio Steady", "seconds": 900 },
+      { "name": "Cool-down", "seconds": 240 }
+    ],
+    "kcalPerMin": 8
+  }
+}
+
+
+

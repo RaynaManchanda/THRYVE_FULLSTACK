@@ -1,0 +1,180 @@
+
+
+/* When screen width is 1200px or less (like medium laptops/tablets) */
+@media (max-width: 1200px) {
+  .container {
+    max-width: 1000px; /* Make the main content narrower for smaller screens */
+  }
+}
+
+/* When screen width is 900px or less (like small tablets or phones) */
+@media (max-width: 900px) {
+  .row {
+    grid-template-columns: 1fr; /* Stack columns vertically instead of side by side */
+  }
+  .timer {
+    font-size: 36px; /* Make timer text smaller on smaller screens */
+  }
+}
+
+
+/* ------------------ COLOR THEME (VARIABLES) ------------------ */
+
+/* Define color variables and gradient that can be reused anywhere */
+:root {
+  --bg: #f5f7fa;              /* Light grey page background */
+  --card: #ffffff;            /* White background for cards/boxes */
+  --ink: #0f172a;             /* Dark text color (almost black) */
+  --muted: #6b7280;           /* Light grey text color for less important info */
+  --line: #e5e7eb;            /* Light grey for borders or dividers */
+  --brand: #2563eb;           /* Main brand color (deep blue) */
+  --brand-weak: #dbeafe;      /* Lighter version of brand blue */
+  --ok: #22c55e;              /* Green color (for success/ok) */
+  --ok-weak: #dcfce7;         /* Lighter green (success background) */
+  --accent: #f59e0b;          /* Orange color (highlight or warning) */
+  --gradient: linear-gradient(135deg, #2563eb, #60a5fa); /* Blue gradient background */
+}
+
+
+/* ------------------ BASE STYLES ------------------ */
+
+/* Applies to all elements so padding/borders don't mess up sizing */
+* { 
+  box-sizing: border-box; 
+}
+
+/* Make sure HTML and body take full height */
+html, body { 
+  height: 100%; 
+}
+
+body {
+  margin: 0; /* Remove default margin from browser */
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; /* Modern clean font stack */
+  color: var(--ink); /* Use dark text color */
+  background: var(--bg); /* Use light grey background */
+}
+
+
+/* ------------------ PAGE STRUCTURE ------------------ */
+
+/* Main content area */
+.container {
+  max-width: 1200px;  /* Keep page centered and not too wide */
+  margin: 32px auto;  /* Add space at top/bottom and center horizontally */
+  padding: 0 24px;    /* Space on left/right inside the container */
+}
+
+/* Top header bar (page title, breadcrumbs, buttons, etc.) */
+.page-header {
+  display: flex;                  /* Arrange children side by side */
+  align-items: center;            /* Vertically center items */
+  justify-content: space-between; /* Push items to left and right ends */
+  gap: 16px;                      /* Add space between items */
+  margin-bottom: 20px;            /* Add space below header */
+}
+
+/* Breadcrumb text (like Home > Workout) */
+.breadcrumb { 
+  font-size: 14px; 
+  color: var(--muted); /* Lighter text color */
+}
+
+/* Big title text at top of page */
+.title { 
+  font-size: 28px; 
+  font-weight: 800;    /* Bold and strong */
+  margin: 2px 0 0;     /* Tiny space at top */
+  color: var(--brand); /* Blue text color */
+}
+
+
+/* ------------------ COMMON ELEMENTS ------------------ */
+
+/* Small rounded tag (used for labels like "Running" or "Active") */
+.pill {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 999px;      /* Fully rounded shape */
+  font-size: 12px;
+  background: var(--brand-weak); /* Light blue background */
+  color: var(--brand);           /* Darker blue text */
+  font-weight: 600;
+}
+
+/* Green tag (used for success messages or status labels) */
+.badge {
+  padding: 4px 10px;
+  border-radius: 999px;    /* Fully rounded shape */
+  font-size: 12px;
+  background: var(--ok-weak); /* Light green background */
+  color: var(--ok);           /* Dark green text */
+  font-weight: 600;
+}
+
+/* Small heading text (like a sub-label) */
+.h6 {
+  font-size: 12px;
+  letter-spacing: .06em;  /* Slight spacing between letters */
+  color: var(--muted);    /* Grey text */
+  margin: 0 0 6px;        /* Space below */
+  text-transform: uppercase; /* Make all caps */
+}
+
+/* Makes text look lighter and less prominent */
+.muted { 
+  color: var(--muted); 
+}
+
+
+/* ------------------ BUTTONS ------------------ */
+
+/* General button style */
+.btn {
+  display: inline-flex;                /* Align text and icon horizontally */
+  align-items: center;                /* Vertically center items */
+  justify-content: center;            /* Center everything */
+  gap: 8px;                           /* Space between icon and text */
+  padding: 10px 16px;                 /* Button size */
+  border-radius: 10px;                /* Rounded corners */
+  border: none;                       /* Remove border */
+  background: var(--gradient);        /* Blue gradient background */
+  color: #fff;                        /* White text */
+  text-decoration: none;              /* Remove underline */
+  font-weight: 600;                   /* Semi-bold text */
+  cursor: pointer;                    /* Show pointer on hover */
+  transition: all 0.3s ease;          /* Smooth hover animation */
+  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.3); /* Light blue shadow */
+}
+
+/* Secondary (gray) button */
+.btn.secondary {
+  background: #f3f4f6; /* Light grey background */
+  color: #111827;      /* Dark text */
+}
+
+/* Ghost (outlined) button */
+.btn.ghost {
+  background: #fff;                 /* White background */
+  color: var(--brand);              /* Blue text */
+  border: 1px solid var(--brand);   /* Blue border */
+}
+
+/* Hover effect for all buttons */
+.btn:hover {
+  transform: translateY(-2px); /* Move slightly upward */
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.4); /* Stronger shadow */
+}
+
+/* Disabled button (not clickable) */
+.btn:disabled {
+  opacity: .5;          /* Look faded */
+  cursor: not-allowed;  /* Show forbidden cursor */
+}
+
+/* Group of buttons side by side */
+.btn-bar { 
+  display: flex; 
+  gap: 10px;             /* Space between buttons */
+  flex-wrap: wrap;       /* Wrap buttons to next line if screen is small */
+}
