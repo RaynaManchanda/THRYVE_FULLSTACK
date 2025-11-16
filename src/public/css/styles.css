@@ -1,0 +1,415 @@
+/* ------------------- COLOR VARIABLES ------------------- */
+:root {
+  --bg: #ffffff;         /* Background color for the whole page */
+  --text: #1a1f2a;       /* Main dark text color */
+  --muted: #5f6b7a;      /* Lighter text color for less important text */
+  --primary: #2563eb;    /* Main blue color for buttons or highlights */
+  --pill1: #ffe9ec;      /* Light pink background for pill badges */
+  --pill2: #eaf2ff;      /* Light blue background for pill badges */
+  --pill3: #e8f7ea;      /* Light green background for pill badges */
+  --pill4: #fff3df;      /* Light yellow background for pill badges */
+  --card: #f8fafc;       /* Slightly off-white color for cards */
+  --ring: #e9eef5;       /* Light gray used for borders or outlines */
+}
+
+
+/* ------------------- BASE STYLES ------------------- */
+* { box-sizing: border-box; }  /* Make width/height include padding & border */
+
+html, body {
+  margin: 0;                     /* Remove browser’s default margin */
+  padding: 0;                    /* Remove default padding */
+  background: var(--bg);         /* Set background using the variable */
+  color: var(--text);            /* Set default text color */
+  font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  /* Set a clean, modern font stack */
+}
+
+/* All links use text color and remove underline */
+a {
+  color: inherit;                /* Use the same color as surrounding text */
+  text-decoration: none;         /* Remove underlines */
+}
+
+/* Main wrapper for page content */
+.container {
+  max-width: 1180px;             /* Page content won’t exceed this width */
+  margin: 0 auto;                /* Center content horizontally */
+  padding: 48px 24px;            /* Add space inside the container */
+}
+
+
+/* ------------------- BUTTONS ------------------- */
+.btn {
+  display: inline-flex;           /* Let text/icons sit next to each other */
+  align-items: center;            /* Vertically center them */
+  gap: .5rem;                     /* Space between icon and text */
+  background: var(--primary);     /* Blue background */
+  color: #fff;                    /* White text */
+  padding: 14px 22px;             /* Inside spacing */
+  border-radius: 12px;            /* Rounded corners */
+  font-weight: 600;               /* Semi-bold text */
+  box-shadow: 0 6px 20px rgba(37, 99, 235, .25); /* Light blue shadow */
+  transition: transform .15s;     /* Smooth lift effect on hover */
+}
+
+/* Slightly lift button when hovered */
+.btn:hover {
+  transform: translateY(-1px);
+}
+
+/* Secondary button — lighter look */
+.btn.secondary {
+  background: #eef2ff;           /* Light bluish background */
+  color: #1e2a5a;                /* Dark blue text */
+  box-shadow: none;              /* No shadow */
+}
+
+
+/* ------------------- BADGES / PILLS ------------------- */
+.badges {
+  display: flex;                 /* Arrange badges in a row */
+  gap: 14px;                     /* Space between them */
+  flex-wrap: wrap;               /* Move to next line if screen small */
+  margin: 22px 0 30px;           /* Space around */
+}
+
+.pill {
+  display: inline-flex;          /* Align icon and text horizontally */
+  align-items: center;           /* Center them vertically */
+  gap: 10px;                     /* Space between icon and text */
+  padding: 12px 16px;            /* Inside padding */
+  border-radius: 999px;          /* Fully rounded pill shape */
+  font-weight: 600;              /* Semi-bold text */
+}
+
+/* Small colored dot inside pill */
+.pill hr {
+  width: 6px;
+  height: 6px;
+  border: none;
+  border-radius: 999px;          /* Make it a circle */
+  background: #94a3b8;           /* Grayish color */
+}
+
+/* Different pill color themes */
+.pill.heart { background: var(--pill1); color: #b4233b; }   /* Pink/red */
+.pill.activity { background: var(--pill2); color: #234aa1; }/* Blue */
+.pill.goal { background: var(--pill3); color: #1f7a39; }    /* Green */
+.pill.achieve { background: var(--pill4); color: #a05a00; } /* Orange */
+
+
+/* ------------------- HERO SECTION ------------------- */
+.hero {
+  display: grid;                     /* Two-column layout */
+  grid-template-columns: 1.2fr 1fr;  /* First column wider */
+  gap: 24px;                         /* Space between columns */
+  align-items: center;               /* Vertically center content */
+}
+
+/* Big main heading */
+.hero h1 {
+  font-size: 90px;
+  letter-spacing: 2px;               /* Space between letters */
+  margin: 0 0 12px;                  /* Space below */
+}
+
+/* Subtitle under heading */
+.hero h2 {
+  font-weight: 500;                  /* Medium weight */
+  color: var(--muted);               /* Gray color */
+  margin: 0 0 26px;                  /* Space below */
+  font-size: 36px;
+}
+
+/* Paragraph text in hero */
+.hero p {
+  color: #3b4656;                    /* Medium-dark gray */
+  line-height: 1.7;                  /* Comfortable line spacing */
+  max-width: 640px;                  /* Limit text width */
+}
+
+/* Image area on the right side */
+.figure {
+  background: #f5f7fb;               /* Light background */
+  border: 1px solid var(--ring);     /* Light border */
+  border-radius: 26px;               /* Rounded edges */
+  padding: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;           /* Center the image inside */
+}
+
+/* Style for image itself */
+.figure img {
+  width: 100%;
+  max-width: 520px;
+  filter: drop-shadow(0 20px 60px rgba(0,0,0,.08)); /* Soft shadow */
+}
+
+/* Buttons below hero text */
+.cta {
+  display: flex;
+  gap: 16px;
+  margin-top: 26px;
+}
+
+
+/* ------------------- STATS SECTION ------------------- */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columns equal width */
+  gap: 24px;
+  margin-top: 40px;
+}
+
+.stat {
+  text-align: center; /* Center number and label */
+}
+
+/* Big number */
+.stat .num {
+  font-size: 46px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+/* Label under the number */
+.stat .lbl {
+  color: var(--muted);
+  margin-top: 6px;
+}
+
+
+/* ------------------- TOPBAR ------------------- */
+.topbar {
+  height: 56px;
+  border-bottom: 1px solid var(--ring);
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 0 20px;
+  position: sticky;   /* Sticks to top while scrolling */
+  top: 0;
+  background: #fff;
+  z-index: 10;        /* Stays above other elements */
+}
+
+.topbar .brand {
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.topbar nav {
+  margin-left: auto;  /* Push nav to the right */
+  display: flex;
+  gap: 18px;
+}
+
+/* Topbar links */
+.topbar a {
+  color: #4b5563;
+}
+
+/* Active link in topbar */
+.topbar a.active {
+  color: var(--primary);
+  font-weight: 700;
+}
+
+
+/* ------------------- DASHBOARD ------------------- */
+.grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr; /* 2-column layout (left bigger) */
+  gap: 18px;
+}
+
+/* Card container box */
+.card {
+  background: #fff;
+  border: 1px solid var(--ring);
+  border-radius: 16px;
+  padding: 16px;
+}
+
+/* Card title */
+.card h4 {
+  margin: 0 0 10px;
+  font-size: 14px;
+  color: #667085;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+}
+
+/* Smaller 3-column grid for metrics */
+.mini {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+/* Each small box */
+.mini .box {
+  background: #fff;
+  border: 1px solid var(--ring);
+  border-radius: 14px;
+  padding: 14px;
+}
+
+/* Key Performance Indicator text */
+.kpi {
+  font-size: 28px;
+  font-weight: 800;
+  margin: 6px 0 4px;
+}
+
+/* Progress bar */
+.progress {
+  height: 6px;
+  background: #eef2f7;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+/* Filled part of progress bar */
+.progress span {
+  display: block;
+  height: 100%;
+  background: var(--primary);
+}
+
+
+/* ------------------- RIGHT LIST ------------------- */
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Individual list item */
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #fbfdff;
+  border: 1px solid var(--ring);
+  padding: 10px 12px;
+  border-radius: 12px;
+}
+
+/* Small blue tag inside item */
+.tag {
+  font-size: 12px;
+  background: #eef2ff;
+  color: #273a9a;
+  padding: 4px 8px;
+  border-radius: 999px;
+  font-weight: 700;
+}
+
+
+/* ------------------- CHART AREA ------------------- */
+.chart {
+  height: 180px;
+  background: linear-gradient(180deg, #f8fbff, transparent);
+  border: 1px dashed #d7dfeb;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #94a3b8;
+  font-weight: 600;
+}
+
+
+/* ------------------- RECOVERY SECTION ------------------- */
+.footer-space { height: 30px; } /* Blank space before footer */
+
+.two {
+  display: grid;
+  grid-template-columns: 1.3fr .7fr;
+  gap: 18px;
+}
+
+/* KPI row with 4 boxes */
+.kpi-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  margin-bottom: 18px;
+}
+
+/* Donut chart placeholder */
+.donut {
+  height: 220px;
+}
+
+/* .donut could have background: conic-gradient() — commented out in code */
+
+
+/* ------------------- SMALL TEXTS AND ROWS ------------------- */
+.row {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.small {
+  font-size: 12px;
+  color: #64748b;
+}
+
+
+/* ------------------- RESPONSIVE DESIGN ------------------- */
+@media (max-width: 980px) {
+  .hero { grid-template-columns: 1fr; }                /* Stack hero section */
+  .hero h1 { font-size: 64px; }                       /* Smaller heading */
+  .grid, .two { grid-template-columns: 1fr; }          /* Single column layout */
+  .kpi-row { grid-template-columns: repeat(2, 1fr); }  /* Fewer KPI boxes per row */
+  .mini { grid-template-columns: 1fr; }                /* Stack mini boxes */
+  .stats { grid-template-columns: repeat(3, 1fr); }    /* Keep 3-column stats */
+}
+
+
+/* ------------------- EXTRA CARD AND BUTTON STYLES ------------------- */
+.container {
+  width: 90%;
+  max-width: 800px;
+  margin: 30px auto;
+  text-align: center;
+}
+
+/* Simple card look (maybe used in another page) */
+.card {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 15px 0;
+  background-color: #f9f9f9;
+  transition: 0.3s;
+}
+
+/* Hover effect for cards */
+.card:hover {
+  background-color: #f0f0f0;
+}
+
+/* Simple purple button */
+.btn {
+  background-color: #6c63ff;
+  color: rgb(246, 238, 238);
+  padding: 8px 15px;
+  border-radius: 6px;
+  text-decoration: none;
+}
+
+/* Input and button form styling */
+input, button {
+  margin: 8px;
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #d02a2a; /* Red border */
+}

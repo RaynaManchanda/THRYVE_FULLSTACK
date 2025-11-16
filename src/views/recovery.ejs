@@ -1,0 +1,137 @@
+<% layout = 'layouts/main' %>
+
+
+<!-- Converted from recovery.html -->
+
+<!--  TOP NAVIGATION BAR -->
+  <header class="topbar">
+    <!-- Brand name / Logo -->
+    <div class="brand">THRYVE</div>
+    
+    <!-- Navigation links and logout button -->
+    <nav style="display: flex; align-items: center; gap: 20px; justify-content: flex-end; padding: 15px 40px;">
+      <!-- Each <a> is a navigation link -->
+      <a href="dashboard" style="text-decoration: none; color: #000; font-weight: 500;">Dashboard</a>
+      <a href="recovery" style="text-decoration: none; color: #000; font-weight: 500;">Recovery</a>
+      <a href="index" style="text-decoration: none; color: #000; font-weight: 500;">Home</a>
+
+      <!-- Logout button -->
+      <button id="logoutBtn"
+              style="background-color: #ff4d4d; color: white; border: none; border-radius: 5px;
+                     padding: 6px 14px; cursor: pointer; font-weight: 500;">
+        Logout
+      </button>
+
+      <!-- Profile icon linking to profile settings page -->
+      <a href="profilesettings" class="profile-icon">👤</a>
+    </nav>
+  </header>
+
+  <!--  MAIN CONTENT SECTION -->
+  <main class="container">
+
+    <!-- 🔹 Row showing key recovery and sleep stats -->
+    <div class="kpi-row">
+      <!-- Each .box is one KPI (Key Performance Indicator) -->
+      <div class="box">
+        <div class="small">Recovery Score</div> <!-- Label -->
+        <div class="kpi">78%</div> <!-- Main number -->
+        <div class="progress"><span style="width:78%"></span></div> <!-- Visual progress bar -->
+      </div>
+
+      <div class="box">
+        <div class="small">Sleep Quality</div>
+        <div class="kpi">85%</div>
+        <div class="progress"><span style="width:85%"></span></div>
+      </div>
+
+      <div class="box">
+        <div class="small">Resting HR</div> <!-- Heart rate while resting -->
+        <div class="kpi">58 bpm</div>
+        <div class="progress"><span style="width:58%"></span></div>
+      </div>
+
+      <div class="box">
+        <div class="small">HRV</div> <!-- Heart Rate Variability -->
+        <div class="kpi">42 ms</div>
+        <div class="progress"><span style="width:42%"></span></div>
+      </div>
+    </div>
+
+    <!--  Two-column layout for charts and recommendations -->
+    <div class="two">
+      <!-- Left column -->
+      <div class="col">
+
+        <!-- Sleep Cycle chart -->
+        <div class="card">
+          <h4>Last Night's Sleep Cycles</h4>
+          <div class="donut"><canvas id="sleepDonut"></canvas></div>
+          <!-- The <canvas> element is where Chart.js will draw the donut chart -->
+        </div>
+
+        <!-- Weekly Strain vs Recovery chart -->
+        <div class="card" style="margin-top:18px">
+          <h4>Weekly Workout Strain vs Recovery</h4>
+          <div class="chart"><canvas id="strainVsRecovery"></canvas></div>
+        </div>
+
+        <!-- Recovery Timeline chart -->
+        <div class="card" style="margin-top:18px">
+          <h4>Recovery Timeline Today</h4>
+          <div class="chart"><canvas id="recoveryTimeline"></canvas></div>
+        </div>
+      </div>
+
+      <!-- Right column (aside section) -->
+      <aside class="col">
+
+        <!-- Recovery Tips -->
+        <div class="card">
+          <h4>Recovery Recommendations</h4>
+          <div class="list">
+            <div class="item"><span>✅ Optimal Recovery — Perfect time for high-intensity workouts.</span></div>
+            <div class="item"><span>💤 Sleep Quality — Maintain your bedtime routine.</span></div>
+            <div class="item"><span>📈 HRV Trend — Upward. Great cardiovascular recovery.</span></div>
+          </div>
+        </div>
+
+        <!-- HRV Trend chart (7 days) -->
+        <div class="card" style="margin-top:18px">
+          <h4>HRV Trend (7 days)</h4>
+          <div class="chart"><canvas id="hrvTrend"></canvas></div>
+        </div>
+
+        <!-- Estimated recovery time box -->
+        <div class="card" style="margin-top:18px">
+          <h4>Estimated Recovery Time</h4>
+          <div class="kpi" style="color:#16a34a">12h</div>
+          <div class="small">Until fully recovered</div>
+
+          <!-- Small activity list -->
+          <div class="list" style="margin-top:12px">
+            <div class="item"><span>Light activity</span><span class="tag">Ready</span></div>
+            <div class="item"><span>Moderate workout</span><span class="tag">6h</span></div>
+            <div class="item"><span>High intensity</span><span class="tag">12h</span></div>
+          </div>
+        </div>
+
+        <!-- Sleep schedule card -->
+        <div class="card" style="margin-top:18px">
+          <h4>Sleep Schedule</h4>
+          <div class="list">
+            <div class="item"><span>Bedtime</span><b>10:30 PM</b></div>
+            <div class="item"><span>Wake up</span><b>6:00 AM</b></div>
+            <div class="item"><span>Sleep debt</span><b>-15 min</b></div>
+            <div class="item"><span>Consistency</span><b>92%</b></div>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <!--  Importing Chart.js library for drawing charts -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.6/dist/chart.umd.min.js"></script>
+
+  <!-- Linking custom JavaScript file to handle the chart logic and data -->
+  <script src="/js/app.js"></script>

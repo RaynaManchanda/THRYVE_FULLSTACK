@@ -1,0 +1,182 @@
+<% layout = ('layouts/main') %>
+
+<!-- Converted from dashboard.html -->
+
+<!-- Top navigation bar -->
+  <header class="topbar">
+    <div class="brand">THRYVE</div> <!-- Logo or Brand name -->
+
+    <!-- Navigation menu -->
+    <nav style="display: flex; align-items: center; gap: 20px; justify-content: flex-end; padding: 15px 40px;">
+      <!-- Navigation links -->
+      <a href="dashboard" style="text-decoration: none; color: #000; font-weight: 500;">Dashboard</a>
+      <a href="recovery" style="text-decoration: none; color: #000; font-weight: 500;">Recovery</a>
+      <a href="index" style="text-decoration: none; color: #000; font-weight: 500;">Home</a>
+
+      <!-- Logout button -->
+      <button id="logoutBtn"
+              style="background-color: #ff4d4d; color: white; border: none; border-radius: 5px;
+                     padding: 6px 14px; cursor: pointer; font-weight: 500;" href="login">
+        Logout
+      </button>
+
+      <!-- Profile settings icon -->
+      <a href="profile-settings" class="profile-icon">👤</a>
+    </nav>
+
+    <!-- JavaScript for Logout Button -->
+    <script>
+      document.getElementById("logoutBtn").addEventListener("click", function () {
+        // Redirect to login page when Logout is clicked
+        window.location.href = "login";
+      });
+    </script>
+  </header>
+
+  <!-- Main content starts -->
+  <main class="container">
+    <h2 class="small">Friday, September 12, 2025</h2>
+
+    <!-- Summary mini boxes -->
+    <div class="mini" style="margin:14px 0 18px">
+      <!-- Steps Box -->
+      <div class="box">
+        <div class="small">Steps</div>
+        <div class="kpi">8,247</div>
+        <div class="progress"><span style="width:82%"></span></div> <!-- Progress bar -->
+      </div>
+
+      <!-- Calories Box -->
+      <div class="box">
+        <div class="small">Calories</div>
+        <div class="kpi">524 kcal</div>
+        <div class="progress"><span style="width:66%"></span></div>
+      </div>
+
+      <!-- Heart Rate Box -->
+      <div class="box">
+        <div class="small">Heart Rate</div>
+        <div class="kpi">72 bpm</div>
+        <div class="progress"><span style="width:45%"></span></div>
+      </div>
+    </div>
+
+    <!-- Grid layout for charts and sidebar -->
+    <div class="grid">
+
+      <!-- Left column -->
+      <div class="col">
+        <div class="card">
+          <h4>Activity Goal</h4>
+          <!-- Chart area for donut chart -->
+          <div class="chart"><canvas id="goalRing"></canvas></div>
+        </div>
+
+        <!-- Row with two charts -->
+        <div class="row" style="margin-top:18px">
+          <div class="card" style="flex:1">
+            <h4>Weekly Steps</h4>
+            <div class="chart"><canvas id="weeklySteps"></canvas></div>
+          </div>
+          <div class="card" style="flex:1">
+            <h4>Heart Rate Today</h4>
+            <div class="chart"><canvas id="hrToday"></canvas></div>
+          </div>
+        </div>
+
+        <!-- Weekly stress chart -->
+        <div class="card" style="margin-top:18px">
+          <h4>Weekly Stress Analysis</h4>
+          <div class="chart"><canvas id="stressCombo"></canvas></div>
+        </div>
+
+        <!-- Two cards side by side -->
+        <div class="row" style="margin-top:18px">
+          <!-- Recent workouts -->
+          <div class="card" style="flex:1">
+            <h4>Recent Workouts</h4>
+            <div class="list">
+              <div class="item"><span>🏃‍♂️ Morning Run • 32 min • 287 cal</span><span class="tag">Today 7:10 AM</span></div>
+              <div class="item"><span>🧘 Evening Yoga • 45 min • 156 cal</span><span class="tag">Yesterday 6:00 PM</span></div>
+            </div>
+          </div>
+
+          <!-- This week's summary -->
+          <div class="card" style="flex:1">
+            <h4>This Week</h4>
+            <div class="list">
+              <div class="item"><span>Total Steps</span><b>72,700</b></div>
+              <div class="item"><span>Active Minutes</span><b>247 min</b></div>
+              <div class="item"><span>Calories Burned</span><b>3,420 kcal</b></div>
+              <div class="item"><span>Avg Stress Level</span><b>25%</b></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right column (sidebar) -->
+      <aside class="col">
+        <div class="card">
+          <h4>Today's Workout Recommendation</h4>
+          <div class="item" style="align-items:flex-start">
+            <div>
+              <div style="font-weight:800">⚡ Moderate Activity</div>
+              <div class="small">Good recovery with some fatigue - perfect for steady-state training</div>
+            </div>
+            <span class="tag">Ready</span>
+          </div>
+        </div>
+
+        <!-- Recommended Workouts -->
+        <div class="card" style="margin-top:18px">
+          <h4>Recommended Workouts</h4>
+          <div class="list">
+            <div class="item"><span>🏃 Moderate Cardio</span><span class="tag">Medium</span></div>
+            <div class="item"><span>🏋️ Strength Training</span><span class="tag">Medium</span></div>
+            <div class="item"><span>🏊 Swimming</span><span class="tag">Medium</span></div>
+            <div class="item"><span>🚴 Cycling</span><span class="tag">Medium</span></div>
+          </div>
+
+          <!-- Buttons for quick workout start -->
+         <!-- Buttons for quick workout start -->
+<div class="row" style="margin-top:12px">
+    <a class="btn" href="/workouts/start-workout">Start Workout</a>
+
+    <a class="btn ghost" href="/start-workout?w=Running">Running</a>
+    <a class="btn ghost" href="/start-workout?w=Cycling">Cycling</a>
+    <a class="btn ghost" href="/start-workout?w=Swimming">Swimming</a>
+    <a class="btn ghost" href="/start-workout?w=Yoga">Yoga</a>
+
+    <a class="btn secondary" href="#">View All Options</a>
+</div>
+
+
+        <!-- Quick Start Buttons -->
+        <div class="card" style="margin-top:18px">
+          <h4>Quick Start</h4>
+          <div class="row">
+            <a class="btn secondary" href="#">Running</a>
+            <a class="btn secondary" href="#">Cycling</a>
+            <a class="btn secondary" href="#">Yoga</a>
+            <a class="btn secondary" href="#">Swimming</a>
+          </div>
+        </div>
+
+        <!-- Achievements Section -->
+        <div class="card" style="margin-top:18px">
+          <h4>Recent Achievements</h4>
+          <div class="list">
+            <div class="item"><span>🏅 10K Steps Streak • 5 days in a row</span><span class="tag">New</span></div>
+            <div class="item"><span>🎯 Weekly Goal • Completed this week</span><span class="tag">Great</span></div>
+            <div class="item"><span>💓 Heart Health • Excellent this month</span><span class="tag">A+</span></div>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <!-- Load Chart.js Library -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.6/dist/chart.umd.min.js"></script>
+
+  <!-- Load custom JavaScript file (creates charts, handles logic) -->
+  <script src="/js/app.js"></script>
